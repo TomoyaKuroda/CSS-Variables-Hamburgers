@@ -1,6 +1,6 @@
 {
   "name": "@tomoyakuroda/css-variable-hamburgers",
-  "version": "1.0.1",
+  "version": "1.0.9",
   "description": "Easy-to-use hamburger menu animations with CSS variables",
   "main": "css-variable-hamburgers.css",
   "scripts": {
