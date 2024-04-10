@@ -9,6 +9,23 @@
 				href="css-variable-hamburgers.min.css">
 	<title>CSS Variable Hamburgers</title>
 	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f8f8f8;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1, h2 {
+			color: #333;
+			text-align: center;
+		}
+
+		p {
+			color: #666;
+			text-align: center;
+		}
+
 		.container {
 			display: flex;
 			flex-wrap: wrap;
@@ -24,6 +41,11 @@
 
 <body>
 	<h1>CSS Variable Hamburgers</h1>
+	<p><a href="https://github.com/TomoyaKuroda/CSS-Variable-Hamburgers"
+			 target="_blank"
+			 rel="noopener noreferrer">https://github.com/TomoyaKuroda/CSS-Variable-Hamburgers</a></p>
+	<p>Click the hamburger icons to toggle the animation.</p>
+
 	<div class="container">
 		<template id="hamburger-template">
 			<div>
@@ -46,8 +68,8 @@
 				clone.querySelector('h2').textContent = type;
 				const hamburgerButton = clone.querySelector('.hamburger');
 				hamburgerButton.classList.add(`hamburger--${type}`);
-				hamburgerButton.addEventListener('click', function() {
-						this.classList.toggle('is-active');
+				hamburgerButton.addEventListener('click', function () {
+					this.classList.toggle('is-active');
 				});
 				document.querySelector('.container').appendChild(clone);
 			});
@@ -56,4 +78,3 @@
 </body>
 
 </html>
-
