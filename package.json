@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/TomoyaKuroda/CSS-Variable-Hamburgers.git"
   },
+  "publishConfig": {
+    "@tomokuro:registry": "https://npm.pkg.github.com"
+  },
   "keywords": [
     "css"
   ],
