@@ -1,6 +1,6 @@
 # CSS-Variable-Hamburgers
 
-This is an open-source project inspired by [Hamburgers](https://github.com/jonsuh/hamburgers), but with the customization feature of using CSS variables instead of SASS. With this project, you can easily create stylish hamburger menu animations for your web projects using pure CSS.
+This is an open-source project inspired by [Hamburgers](https://jonsuh.com/hamburgers/), but with the customization feature of using CSS variables instead of SASS. With this project, you can easily create stylish hamburger menu animations for your web projects using pure CSS.
 
 ## Motivation
 
@@ -46,16 +46,16 @@ The motivation behind this project is to provide a simpler and more flexible alt
 
 ```css
 :root {
---hamburger-padding-x           : 15px;
---hamburger-padding-y           : 15px;
---hamburger-layer-width         : 40px;
---hamburger-layer-height        : 4px;
---hamburger-layer-spacing       : 6px;
---hamburger-layer-color         : #000;
---hamburger-layer-border-radius : 4px;
---hamburger-hover-opacity       : 0.7;
---hamburger-active-layer-color  : var(--hamburger-layer-color);
---hamburger-active-hover-opacity: var(--hamburger-hover-opacity);
+  --hamburger-padding-x           : 15px;
+  --hamburger-padding-y           : 15px;
+  --hamburger-layer-width         : 40px;
+  --hamburger-layer-height        : 4px;
+  --hamburger-layer-spacing       : 6px;
+  --hamburger-layer-color         : #000;
+  --hamburger-layer-border-radius : 4px;
+  --hamburger-hover-opacity       : 0.7;
+  --hamburger-active-layer-color  : var(--hamburger-layer-color);
+  --hamburger-active-hover-opacity: var(--hamburger-hover-opacity);
 }
 ```
 
