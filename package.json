@@ -1,0 +1,22 @@
+{
+  "name": "@tomokuro/css-variable-hamburgers",
+  "version": "1.0.0",
+  "description": "Easy-to-use hamburger menu animations with CSS variables",
+  "main": "css-variable-hamburgers.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomoyaKuroda/CSS-Variable-Hamburgers.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "Tomoya Kuroda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TomoyaKuroda/CSS-Variable-Hamburgers/issues"
+  },
+  "homepage": "https://github.com/TomoyaKuroda/CSS-Variable-Hamburgers#readme"
+}
