@@ -521,7 +521,7 @@
 
 	&.is-active {
 		.hamburger-inner {
-			--y-offset: var(--hamburger-layer-spacing) + var(--hamburger-layer-height);
+			--y-offset: calc(var(--hamburger-layer-spacing) + var(--hamburger-layer-height));
 
 			transform: translate3d(0, var(--y-offset), 0) rotate(-135deg);
 			transition-delay: 0.075s;
@@ -558,7 +558,7 @@
 
 	&.is-active {
 		.hamburger-inner {
-			--y-offset: var(--hamburger-layer-spacing) + var(--hamburger-layer-height);
+			--y-offset: calc(var(--hamburger-layer-spacing) + var(--hamburger-layer-height));
 
 			transform: translate3d(0, var(--y-offset), 0) rotate(135deg);
 			transition-delay: 0.075s;
@@ -590,7 +590,7 @@
 		}
 
 		&::after {
-			top: (var(--hamburger-layer-height)) + (var(--hamburger-layer-spacing));
+			top: calc((var(--hamburger-layer-height)) + (var(--hamburger-layer-spacing)));
 			right: 0;
 			transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335),
 									top 0.05s 0.125s linear,
@@ -605,18 +605,18 @@
 			background-color: transparent !important;
 
 			&::before {
-				left: var(--hamburger-layer-width) * -2;
+				left: calc(var(--hamburger-layer-width) * -2);
 				top: calc(var(--hamburger-layer-width) * 2);
-				transform: translate3d(var(--hamburger-layer-width) * 2, var(--hamburger-layer-width) * -2, 0) rotate(-45deg);
+				transform: translate3d(calc(var(--hamburger-layer-width) * 2), calc(var(--hamburger-layer-width) * -2), 0) rotate(-45deg);
 				transition: left 0.125s ease-out,
 										top 0.05s 0.125s linear,
 										transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
 			}
 
 			&::after {
-				right: var(--hamburger-layer-width) * -2;
+				right: calc(var(--hamburger-layer-width) * -2);
 				top: calc(var(--hamburger-layer-width) * 2);
-				transform: translate3d(var(--hamburger-layer-width) * -2, var(--hamburger-layer-width) * -2, 0) rotate(45deg);
+				transform: translate3d(calc(var(--hamburger-layer-width) * -2), calc(var(--hamburger-layer-width) * -2), 0) rotate(45deg);
 				transition: right 0.125s ease-out,
 										top 0.05s 0.125s linear,
 										transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -639,7 +639,7 @@
 		}
 
 		&::after {
-			top: (var(--hamburger-layer-height)) + (var(--hamburger-layer-spacing));
+			top: calc((var(--hamburger-layer-height)) + (var(--hamburger-layer-spacing)));
 			right: 0;
 			transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335),
 									top 0.05s 0.125s linear,
@@ -654,18 +654,18 @@
 			background-color: transparent !important;
 
 			&::before {
-				left: var(--hamburger-layer-width) * -2;
+				left: calc(var(--hamburger-layer-width) * -2);
 				top: var(--hamburger-layer-width) * -2;
-				transform: translate3d(var(--hamburger-layer-width) * 2, var(--hamburger-layer-width) * 2, 0) rotate(45deg);
+				transform: translate3d(calc(var(--hamburger-layer-width) * 2), var(--hamburger-layer-width) * 2, 0) rotate(45deg);
 				transition: left 0.125s ease-out,
 										top 0.05s 0.125s linear,
 										transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
 			}
 
 			&::after {
-				right: var(--hamburger-layer-width) * -2;
+				right: calc(var(--hamburger-layer-width) * -2);
 				top: var(--hamburger-layer-width) * -2;
-				transform: translate3d(var(--hamburger-layer-width) * -2, var(--hamburger-layer-width) * 2, 0) rotate(-45deg);
+				transform: translate3d(calc(var(--hamburger-layer-width) * -2), var(--hamburger-layer-width) * 2, 0) rotate(-45deg);
 				transition: right 0.125s ease-out,
 										top 0.05s 0.125s linear,
 										transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -722,7 +722,7 @@
 
 	&.is-active {
 		.hamburger-inner {
-			--y-offset: var(--hamburger-layer-spacing) + var(--hamburger-layer-height);
+			--y-offset: calc(var(--hamburger-layer-spacing) + var(--hamburger-layer-height));
 
 			transform: translate3d(0, var(--y-offset), 0) rotate(-45deg);
 
@@ -756,7 +756,7 @@
 
 	&.is-active {
 		.hamburger-inner {
-			--y-offset: var(--hamburger-layer-spacing) + var(--hamburger-layer-height);
+			--y-offset: calc(var(--hamburger-layer-spacing) + var(--hamburger-layer-height));
 
 			transform: translate3d(0, var(--y-offset), 0) rotate(45deg);
 
@@ -920,14 +920,14 @@
 				top: 0;
 				transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
 										transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-				transform: translate3d(0, var(--hamburger-layer-spacing) + var(--hamburger-layer-height), 0) rotate(45deg);
+				transform: translate3d(0, calc(var(--hamburger-layer-spacing) + var(--hamburger-layer-height)), 0) rotate(45deg);
 			}
 
 			&::after {
 				top: 0;
 				transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
 										transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-				transform: translate3d(0, var(--hamburger-layer-spacing) + var(--hamburger-layer-height), 0) rotate(-45deg);
+				transform: translate3d(0, calc(var(--hamburger-layer-spacing) + var(--hamburger-layer-height)), 0) rotate(-45deg);
 			}
 		}
 	}

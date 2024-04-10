@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"
+				href="css-variable-hamburgers.css">
+	<title>CSS Variable Hamburgers</title>
+	<style>
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+
+			&>div {
+				flex-basis: 150px;
+				text-align: center;
+
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<h1>CSS Variable Hamburgers</h1>
+	<div class="container">
+		<template id="hamburger-template">
+			<div>
+				<h2></h2>
+				<button class="hamburger"
+								type="button">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+			</div>
+		</template>
+
+		<script>
+			const types = ["3dx", "3dx-r", "3dy", "3dy-r", "3dxy", "3dxy-r", "arrow", "arrow-r", "arrowalt", "arrowalt-r", "arrowturn", "arrowturn-r", "boring", "collapse", "collapse-r", "elastic", "elastic-r", "emphatic", "emphatic-r", "minus", "slider", "slider-r", "spring", "spring-r", "stand", "stand-r", "spin", "spin-r", "squeeze", "vortex", "vortex-r"];
+			const template = document.getElementById('hamburger-template');
+
+			types.forEach(type => {
+				const clone = document.importNode(template.content, true);
+				clone.querySelector('h2').textContent = type;
+				const hamburgerButton = clone.querySelector('.hamburger');
+				hamburgerButton.classList.add(`hamburger--${type}`);
+				hamburgerButton.addEventListener('click', function() {
+						this.classList.toggle('is-active');
+				});
+				document.querySelector('.container').appendChild(clone);
+			});
+
+			// document.querySelectorAll('.hamburger').forEach(button => {
+			// 	button.addEventListener('click', function() {
+			// 		this.classList.toggle('is-active');
+			// 	});
+			// });
+		</script>
+	</div>
+</body>
+
+</html>
+
