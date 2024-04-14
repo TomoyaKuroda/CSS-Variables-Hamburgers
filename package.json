@@ -1,6 +1,6 @@
 {
   "name": "@tomoyakuroda/css-variables-hamburgers",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Easy-to-use hamburger menu animations with CSS variables",
   "main": "css-variables-hamburgers.css",
   "scripts": {
@@ -11,7 +11,8 @@
     "url": "git+https://github.com/TomoyaKuroda/CSS-Variables-Hamburgers.git"
   },
   "publishConfig": {
-    "@tomoyakuroda:registry": "https://npm.pkg.github.com"
+    "access": "public",
+    "@tomoyakuroda:registry": "https://registry.npmjs.org"
   },
   "keywords": [
     "css"
