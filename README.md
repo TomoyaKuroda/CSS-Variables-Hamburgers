@@ -24,6 +24,8 @@ The motivation behind this project is to provide a simpler and more flexible alt
 
 ```html
 <link rel="stylesheet" href="css-variable-hamburgers.min.css">
+<!-- CDN -->
+<link href="https://cdn.jsdelivr.net/npm/@tomoyakuroda/css-variables-hamburgers@1/css-variables-hamburgers.min.css" rel="stylesheet">
 ```
 
 3. Add the base hamburger markup:
