@@ -9,6 +9,8 @@
 				href="css-variables-hamburgers.min.css">
 	<title>CSS Variables Hamburgers</title>
 	<meta name="description" content="Easy-to-use hamburger menu animations with CSS variables">
+	<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+	<link rel="icon" type="image/png" href="assets/images/favicon.png">
 	<link rel="canonical" href="https://tomoyakuroda.github.io/CSS-Variables-Hamburgers/">
 	<style>
 		body {
@@ -25,17 +27,22 @@
 		}
 
 		.hamburger-container {
-			display: flex;
-			flex-wrap: wrap;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, 150px);
+			justify-content: space-between;
 
 			&>div {
-				flex-basis: 150px;
+				width: 150px;
 				text-align: center;
 			}
 		}
+		code,pre{
+			word-break: break-word;
+			white-space: pre-wrap;
+		}
 		.container{
 			font-size: 14px;
-			max-width: 600px;
+			max-width: 800px;
 			margin: 40px auto 40px;
 			padding: 0 10px;
 		}
