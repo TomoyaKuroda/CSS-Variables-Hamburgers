@@ -14,6 +14,7 @@
 			background-color: #f8f8f8;
 			margin: 0;
 			padding: 0;
+			color: #666;
 		}
 
 		h1, h2 {
@@ -21,32 +22,34 @@
 			text-align: center;
 		}
 
-		p {
-			color: #666;
-			text-align: center;
-		}
-
-		.container {
+		.hamburger-container {
 			display: flex;
 			flex-wrap: wrap;
 
 			&>div {
 				flex-basis: 150px;
 				text-align: center;
-
 			}
+		}
+		.container{
+			font-size: 14px;
+			max-width: 600px;
+			margin: 40px auto 40px;
+			padding: 0 10px;
 		}
 	</style>
 </head>
 
 <body>
-	<h1>CSS Variable Hamburgers</h1>
-	<p><a href="https://github.com/TomoyaKuroda/CSS-Variable-Hamburgers"
-			 target="_blank"
-			 rel="noopener noreferrer">https://github.com/TomoyaKuroda/CSS-Variables-Hamburgers</a></p>
-	<p>Click the hamburger icons to toggle the animation.</p>
-
 	<div class="container">
+		<h1>CSS Variable Hamburgers</h1>
+		<p><a href="https://github.com/TomoyaKuroda/CSS-Variable-Hamburgers"
+				 target="_blank"
+				 rel="noopener noreferrer">https://github.com/TomoyaKuroda/CSS-Variables-Hamburgers</a></p>
+		<p>Click the hamburger icons to toggle the animation.</p>
+	</div>
+
+	<div class="hamburger-container">
 		<template id="hamburger-template">
 			<div>
 				<h2></h2>
@@ -58,7 +61,71 @@
 				</button>
 			</div>
 		</template>
-
+	</div>
+	<div class="container">
+		<h3>CSS-Variables-Hamburgers</h3>
+		<p>This is an open-source project inspired by <a href="https://jonsuh.com/hamburgers/" target="_blank" rel="noopener noreferrer">Hamburgers by Jonathan Suh</a>, but with the customization feature of using CSS variables instead of Sass. With this project, you can easily create stylish hamburger menu animations for your web projects using pure CSS.</p>
+		<h3>Motivation</h3>
+		<p>The motivation behind this project is to provide a simpler and more flexible alternative to using Sass for customizing hamburger menu animations. By utilizing CSS variables, developers can easily tweak colors, sizes, and other properties directly in their CSS files without the need for Sass preprocessing.</p>
+		<h3>Features</h3>
+		<ul>
+			<li>Easy-to-use hamburger menu animations.</li>
+			<li>Customizable with CSS variables.</li>
+			<li>Lightweight and dependency-free.</li>
+			<li>Cross-browser compatible.</li>
+		</ul>
+		<h3>Usage</h3>
+		<ol>
+			<li>Download the CSS file <code>css-variables-hamburgers.min.css</code>.</li>
+			<li>Include the CSS file in your HTML document:</li>
+			<pre><code>&lt;link rel="stylesheet" href="css-variables-hamburgers.min.css"&gt;</code></pre>
+			<p>or</p>
+			<code>&lt;link href="https://cdn.jsdelivr.net/npm/@tomoyakuroda/css-variables-hamburgers@1/css-variables-hamburgers.min.css" rel="stylesheet"&gt;</code>
+			<p></p>
+			<li>Add the base hamburger markup:</li>
+			<pre><code>&lt;button class="hamburger" type="button"&gt;
+	&lt;span class="hamburger-box"&gt;
+		&lt;span class="hamburger-inner"&gt;&lt;/span&gt;
+	&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+			<li>Append the class name of the type of hamburger you’re craving:</li>
+			<pre><code>&lt;button class="hamburger hamburger--collapse" type="button"&gt;
+	&lt;span class="hamburger-box"&gt;
+		&lt;span class="hamburger-inner"&gt;&lt;/span&gt;
+	&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+			<li>Customize the hamburger menu using CSS variables:</li>
+			<pre><code>:root {
+	--hamburger-padding-x           : 15px;
+	--hamburger-padding-y           : 15px;
+	--hamburger-layer-width         : 40px;
+	--hamburger-layer-height        : 4px;
+	--hamburger-layer-spacing       : 6px;
+	--hamburger-layer-color         : #000;
+	--hamburger-layer-border-radius : 4px;
+	--hamburger-hover-opacity       : 0.7;
+	--hamburger-active-layer-color  : var(--hamburger-layer-color);
+	--hamburger-active-hover-opacity: var(--hamburger-hover-opacity);
+}</code></pre>
+			<li>Toggle the hamburger menu animation with JavaScript:</li>
+			<pre><code>&lt;script&gt;
+	// Look for .hamburger
+	var hamburger = document.querySelector(".hamburger");
+	// On click
+	hamburger.addEventListener("click", function() {
+		// Toggle class "is-active"
+		hamburger.classList.toggle("is-active");
+		// Do something else, like open/close menu
+	});
+&lt;/script&gt;</code></pre>
+		</ol>
+		<h3>Contributing</h3>
+		<p>Contributions are welcome! If you have any ideas for improvements or new features, feel free to open an issue or submit a pull request.</p>
+		<h3>License</h3>
+		<p>This project is licensed under the MIT License.</p>
+		<h3>Acknowledgments</h3>
+		<p>Many thanks to <a href="https://jonsuh.com/" target="_blank" rel="noopener noreferrer">Jonathan Suh</a> for providing the inspiration and the open-source project.</p>
+		</div>
 		<script>
 			const types = ["3dx", "3dx-r", "3dy", "3dy-r", "3dxy", "3dxy-r", "arrow", "arrow-r", "arrowalt", "arrowalt-r", "arrowturn", "arrowturn-r", "boring", "collapse", "collapse-r", "elastic", "elastic-r", "emphatic", "emphatic-r", "minus", "slider", "slider-r", "spring", "spring-r", "stand", "stand-r", "spin", "spin-r", "squeeze", "vortex", "vortex-r"];
 			const template = document.getElementById('hamburger-template');
@@ -71,10 +138,9 @@
 				hamburgerButton.addEventListener('click', function () {
 					this.classList.toggle('is-active');
 				});
-				document.querySelector('.container').appendChild(clone);
+				document.querySelector('.hamburger-container').appendChild(clone);
 			});
 		</script>
-	</div>
 </body>
 
 </html>
