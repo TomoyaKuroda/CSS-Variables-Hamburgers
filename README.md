@@ -2,6 +2,10 @@
 
 This is an open-source project inspired by [Hamburgers](https://jonsuh.com/hamburgers/), but with the customization feature of using CSS variables instead of Sass. With this project, you can easily create stylish hamburger menu animations for your web projects using pure CSS.
 
+## Demo page
+
+[https://tomoyakuroda.github.io/CSS-Variables-Hamburgers/](https://tomoyakuroda.github.io/CSS-Variables-Hamburgers/)
+
 ## Motivation
 
 The motivation behind this project is to provide a simpler and more flexible alternative to using Sass for customizing hamburger menu animations. By utilizing CSS variables, developers can easily tweak colors, sizes, and other properties directly in their CSS files without the need for Sass preprocessing.
@@ -20,6 +24,8 @@ The motivation behind this project is to provide a simpler and more flexible alt
 
 ```html
 <link rel="stylesheet" href="css-variable-hamburgers.min.css">
+<!-- CDN -->
+<link href="https://cdn.jsdelivr.net/npm/@tomoyakuroda/css-variables-hamburgers@1/css-variables-hamburgers.min.css" rel="stylesheet">
 ```
 
 3. Add the base hamburger markup:
