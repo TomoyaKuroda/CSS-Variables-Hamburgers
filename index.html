@@ -104,6 +104,17 @@
     min-width: 196px;
   }
 }
+.demo-container{
+	display: flex;
+	flex-wrap: wrap;
+}
+.demo-input{
+	display: grid;
+	gap: .5rem;
+}
+#demo{
+	margin: auto;
+}
 	</style>
 </head>
 
@@ -120,6 +131,62 @@
 		</div>
 	</div>
 
+	<h2>Demo</h2>
+	<p class="copy">Tweak the CSS variables to see the effect</p>
+	<div class="container demo-container">
+		<div class="demo-input">
+			<div>
+				<label for="hamburger-padding-x">--hamburger-padding-x</label>
+				<input type="number" id="hamburger-padding-x" onChange="updateCSSVariables()" value="15">
+			</div>
+			<div>
+				<label for="hamburger-padding-y">--hamburger-padding-y</label>
+				<input type="number" id="hamburger-padding-y" onChange="updateCSSVariables()" value="15">
+			</div>
+			<div>
+				<label for="hamburger-layer-width">--hamburger-layer-width</label>
+				<input type="number" id="hamburger-layer-width" onChange="updateCSSVariables()" value="40">
+			</div>
+			<div>
+				<label for="hamburger-layer-height">--hamburger-layer-height</label>
+				<input type="number" id="hamburger-layer-height" onChange="updateCSSVariables()" value="4">
+			</div>
+			<div>
+				<label for="hamburger-layer-spacing">--hamburger-layer-spacing</label>
+				<input type="number" id="hamburger-layer-spacing" onChange="updateCSSVariables()" value="6">
+			</div>
+			<div>
+				<label for="hamburger-layer-color">--hamburger-layer-color</label>
+				<input type="color" id="hamburger-layer-color" onChange="updateCSSVariables()" value="#000">
+			</div>
+			<div>
+				<label for="hamburger-layer-border-radius">--hamburger-layer-border-radius</label>
+				<input type="number" id="hamburger-layer-border-radius" onChange="updateCSSVariables()" value="4">
+			</div>
+			<div>
+				<label for="hamburger-hover-opacity">--hamburger-hover-opacity</label>
+				<input type="number" id="hamburger-hover-opacity" onChange="updateCSSVariables()" value="0.7" min="0" max="1" step="0.1">
+			</div>
+			<div>
+				<label for="hamburger-active-layer-color">--hamburger-active-layer-color</label>
+				<input type="color" id="hamburger-active-layer-color" onChange="updateCSSVariables()" value="#000">
+			</div>
+			<div>
+				<label for="hamburger-active-hover-opacity">--hamburger-active-hover-opacity</label>
+				<input type="number" id="hamburger-active-hover-opacity" onChange="updateCSSVariables()" value="0.7" min="0" max="1" step="0.1">
+			</div>
+			<div>
+				<label for="hamburger-checkbox">Active</label>
+				<input type="checkbox" id="hamburger-checkbox" onChange="updateCSSVariables()">
+			</div>
+		</div>
+			<button class="hamburger hamburger--collapse" id="demo"
+							type="button">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+	</div>
 	<div class="hamburger-container">
 		<template id="hamburger-template">
 			<div>
@@ -211,6 +278,32 @@
 				});
 				document.querySelector('.hamburger-container').appendChild(clone);
 			});
+
+			function updateCSSVariables() {
+				const demo = document.getElementById('demo');
+				const hamburgerPaddingX = document.getElementById('hamburger-padding-x').value;
+				const hamburgerPaddingY = document.getElementById('hamburger-padding-y').value;
+				const hamburgerLayerWidth = document.getElementById('hamburger-layer-width').value;
+				const hamburgerLayerHeight = document.getElementById('hamburger-layer-height').value;
+				const hamburgerLayerSpacing = document.getElementById('hamburger-layer-spacing').value;
+				const hamburgerLayerColor = document.getElementById('hamburger-layer-color').value;
+				const hamburgerLayerBorderRadius = document.getElementById('hamburger-layer-border-radius').value;
+				const hamburgerHoverOpacity = document.getElementById('hamburger-hover-opacity').value;
+				const hamburgerActiveLayerColor = document.getElementById('hamburger-active-layer-color').value;
+				const hamburgerActiveHoverOpacity = document.getElementById('hamburger-active-hover-opacity').value;
+				const hamburgerCheckbox = document.getElementById('hamburger-checkbox').checked;
+				demo.style.setProperty('--hamburger-padding-x', `${hamburgerPaddingX}px`);
+				demo.style.setProperty('--hamburger-padding-y', `${hamburgerPaddingY}px`);
+				demo.style.setProperty('--hamburger-layer-width', `${hamburgerLayerWidth}px`);
+				demo.style.setProperty('--hamburger-layer-height', `${hamburgerLayerHeight}px`);
+				demo.style.setProperty('--hamburger-layer-spacing', `${hamburgerLayerSpacing}px`);
+				demo.style.setProperty('--hamburger-layer-color', hamburgerLayerColor);
+				demo.style.setProperty('--hamburger-layer-border-radius', `${hamburgerLayerBorderRadius}px`);
+				demo.style.setProperty('--hamburger-hover-opacity', hamburgerHoverOpacity);
+				demo.style.setProperty('--hamburger-active-layer-color', hamburgerActiveLayerColor);
+				demo.style.setProperty('--hamburger-active-hover-opacity', hamburgerActiveHoverOpacity);
+				demo.classList.toggle('is-active', hamburgerCheckbox);
+			}
 		</script>
 </body>
 
