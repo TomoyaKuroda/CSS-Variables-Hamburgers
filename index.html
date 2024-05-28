@@ -279,8 +279,8 @@
 				document.querySelector('.hamburger-container').appendChild(clone);
 			});
 
+			const demo = document.getElementById('demo');
 			function updateCSSVariables() {
-				const demo = document.getElementById('demo');
 				const hamburgerPaddingX = document.getElementById('hamburger-padding-x').value;
 				const hamburgerPaddingY = document.getElementById('hamburger-padding-y').value;
 				const hamburgerLayerWidth = document.getElementById('hamburger-layer-width').value;
@@ -304,6 +304,13 @@
 				demo.style.setProperty('--hamburger-active-hover-opacity', hamburgerActiveHoverOpacity);
 				demo.classList.toggle('is-active', hamburgerCheckbox);
 			}
+
+			demo.addEventListener("click", function() {
+				demo.classList.toggle("is-active");
+				document.getElementById('hamburger-checkbox').checked = demo.classList.contains('is-active');
+			});
+
+
 		</script>
 </body>
 
