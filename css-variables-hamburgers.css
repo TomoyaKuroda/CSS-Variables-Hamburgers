@@ -680,8 +680,8 @@
 
       &::before {
         left: calc(var(--hamburger-layer-width) * -2);
-        top: var(--hamburger-layer-width) * -2;
-        transform: translate3d(calc(var(--hamburger-layer-width) * 2), var(--hamburger-layer-width) * 2, 0) rotate(45deg);
+        top: calc(var(--hamburger-layer-width) * -2);
+        transform: translate3d(calc(var(--hamburger-layer-width) * 2), calc(var(--hamburger-layer-width) * 2), 0) rotate(45deg);
         transition:
           left 0.125s ease-out,
           top 0.05s 0.125s linear,
@@ -690,8 +690,8 @@
 
       &::after {
         right: calc(var(--hamburger-layer-width) * -2);
-        top: var(--hamburger-layer-width) * -2;
-        transform: translate3d(calc(var(--hamburger-layer-width) * -2), var(--hamburger-layer-width) * 2, 0) rotate(-45deg);
+        top: calc(var(--hamburger-layer-width) * -2);
+        transform: translate3d(calc(var(--hamburger-layer-width) * -2), calc(var(--hamburger-layer-width) * 2), 0) rotate(-45deg);
         transition:
           right 0.125s ease-out,
           top 0.05s 0.125s linear,
