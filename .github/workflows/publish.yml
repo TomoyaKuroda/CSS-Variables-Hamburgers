@@ -1,0 +1,17 @@
+name: Publish to GitHub Packages
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-to-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # Checkout code from repository
+      - uses: 'packages/publish@v1' # Publish to GitHub Packages
+        with:
+          registry-url: 'https://npm.pkg.github.com/TomoyaKuroda/CSS-Variables-Hamburgers' # Replace with your details
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          # Path to your CSS file (adjust as needed)
+          files: 'css-variable-hamburgers.min.css'
