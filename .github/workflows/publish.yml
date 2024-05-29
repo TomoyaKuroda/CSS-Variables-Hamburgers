@@ -14,4 +14,4 @@ jobs:
           registry-url: 'https://npm.pkg.github.com/TomoyaKuroda/CSS-Variables-Hamburgers' # Replace with your details
           access-token: ${{ secrets.GITHUB_TOKEN }}
           # Path to your CSS file (adjust as needed)
-          files: 'css-variable-hamburgers.min.css'
+          files: 'css-variables-hamburgers.min.css'
