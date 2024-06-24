@@ -27,7 +27,7 @@
 			text-align: center;
 		}
 
-		input{
+		input, select{
 			background: transparent;
 		}
 
@@ -141,6 +141,10 @@
 	<div class="container demo-container">
 		<div class="demo-input">
 			<div>
+				<label for="hamburger-classes">hamburger class</label>
+				<select id="hamburger-classes" onChange="updateHamburgerClass()"></select>
+			</div>
+			<div>
 				<label for="hamburger-padding-x">--hamburger-padding-x</label>
 				<input type="number" id="hamburger-padding-x" onChange="updateCSSVariables()" value="15">
 			</div>
@@ -185,7 +189,7 @@
 				<input type="checkbox" id="hamburger-checkbox" onChange="updateCSSVariables()">
 			</div>
 		</div>
-			<button class="hamburger hamburger--collapse" id="demo"
+			<button class="hamburger hamburger--3dx" id="demo"
 							type="button">
 				<span class="hamburger-box">
 					<span class="hamburger-inner"></span>
@@ -231,7 +235,7 @@
 		&lt;span class="hamburger-inner"&gt;&lt;/span&gt;
 	&lt;/span&gt;
 &lt;/button&gt;</code></pre>
-			<li>Append the class name of the type of hamburger you’re craving:</li>
+			<li>Append the class name of the type of hamburger you’re craving (e.g. hamburger--collapse):</li>
 			<pre><code>&lt;button class="hamburger hamburger--collapse" type="button"&gt;
 	&lt;span class="hamburger-box"&gt;
 		&lt;span class="hamburger-inner"&gt;&lt;/span&gt;
@@ -272,7 +276,7 @@
 		<script>
 			const types = ["3dx", "3dx-r", "3dy", "3dy-r", "3dxy", "3dxy-r", "arrow", "arrow-r", "arrowalt", "arrowalt-r", "arrowturn", "arrowturn-r", "boring", "collapse", "collapse-r", "elastic", "elastic-r", "emphatic", "emphatic-r", "minus", "slider", "slider-r", "spring", "spring-r", "stand", "stand-r", "spin", "spin-r", "squeeze", "vortex", "vortex-r"];
 			const template = document.getElementById('hamburger-template');
-
+			const hamburgerClasses = document.getElementById('hamburger-classes');
 			types.forEach(type => {
 				const clone = document.importNode(template.content, true);
 				clone.querySelector('h2').textContent = type;
@@ -282,6 +286,8 @@
 					this.classList.toggle('is-active');
 				});
 				document.querySelector('.hamburger-container').appendChild(clone);
+
+				hamburgerClasses.innerHTML += `<option value="${type}">${type}</option>`
 			});
 
 			const demo = document.getElementById('demo');
@@ -308,6 +314,20 @@
 				demo.style.setProperty('--hamburger-active-layer-color', hamburgerActiveLayerColor);
 				demo.style.setProperty('--hamburger-active-hover-opacity', hamburgerActiveHoverOpacity);
 				demo.classList.toggle('is-active', hamburgerCheckbox);
+			}
+
+			function updateHamburgerClass() {
+				const hamburgerClasses = document.getElementById('hamburger-classes').value;
+				removeClassesWithPrefix(demo, 'hamburger--');
+				demo.classList.add(`hamburger--${hamburgerClasses}`);
+			}
+
+			function removeClassesWithPrefix(element, prefix) {
+					// Convert the element's class list to an array for easier manipulation
+					const classesToRemove = Array.from(element.classList).filter(className => className.startsWith(prefix));
+					
+					// Remove each class that starts with the specified prefix
+					classesToRemove.forEach(className => element.classList.remove(className));
 			}
 
 			demo.addEventListener("click", function() {
