@@ -15,7 +15,8 @@
     "@tomoyakuroda:registry": "https://registry.npmjs.org"
   },
   "keywords": [
-    "css"
+    "css",
+    "hamburger"
   ],
   "author": "Tomoya Kuroda",
   "license": "MIT",
