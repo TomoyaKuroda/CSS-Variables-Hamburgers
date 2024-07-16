@@ -50,6 +50,7 @@
   height: calc(var(--hamburger-layer-height) * 3 + var(--hamburger-layer-spacing) * 2);
   display: inline-block;
   position: relative;
+  vertical-align: middle;
 }
 
 .hamburger-inner {
