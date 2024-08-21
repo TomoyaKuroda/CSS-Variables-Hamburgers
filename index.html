@@ -1,346 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-				content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet"
-				href="css-variables-hamburgers.min.css">
-	<title>CSS Variables Hamburgers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Variables Hamburgers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<script src="https://cdn.tailwindcss.com"></script>
 	<meta name="description" content="Easy-to-use hamburger menu animations with CSS variables">
 	<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 	<link rel="icon" type="image/png" href="assets/images/favicon.png">
 	<link rel="canonical" href="https://tomoyakuroda.github.io/CSS-Variables-Hamburgers/">
-	<style>
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}details,main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{padding:.35em .75em .625em}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}
-
-		body {
-			font-family: Arial, sans-serif;
-			background-color: #DFDBE5;
-			background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-			margin: 0;
-			padding: 0;
-			color: #666;
-		}
-
-		h1, h2 {
-			color: #333;
-			text-align: center;
-		}
-
-		input, select{
-			background: transparent;
-		}
-
-		.hamburger-container {
-			display: grid;
-			grid-template-columns: repeat(auto-fill, 150px);
-			justify-content: space-between;
-
-			&>div {
-				width: 150px;
-				text-align: center;
-			}
-		}
-		code,pre{
-			word-break: break-word;
-			white-space: pre-wrap;
-		}
-		.container{
-			font-size: 14px;
-			max-width: 800px;
-			margin: 40px auto 40px;
-			padding: 0 10px;
-		}
-		.logo{
-			display: block;
-			margin: 0 auto;
-			margin-bottom: 40px;
-			width: 150px;
-			height: auto;
-		}
-		.copy{
-			text-align: center;
-		}
-/* CSS */
-.button-64 {
-  align-items: center;
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
-  border: 0;
-  border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  display: inline-flex;
-  font-size: 20px;
-  justify-content: center;
-  line-height: 1em;
-  max-width: 100%;
-  min-width: 140px;
-  padding: 3px;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.button-64:active,
-.button-64:hover {
-  outline: 0;
-}
-
-.button-64 span {
-  background-color: rgb(5, 6, 45);
-  padding: 16px 24px;
-  border-radius: 6px;
-  width: 100%;
-  height: 100%;
-  transition: 300ms;
-}
-
-.button-64:hover span {
-  background: none;
-}
-
-@media (min-width: 768px) {
-  .button-64 {
-    font-size: 24px;
-    min-width: 196px;
-  }
-}
-.demo-container{
-	display: flex;
-	flex-wrap: wrap;
-}
-.demo-input{
-	display: grid;
-	gap: .5rem;
-	border: 1px solid #000;
-	padding: 1rem;
-}
-#demo{
-	margin: auto;
-}
-	</style>
 </head>
+<body class="min-h-screen bg-gray-100 font-roboto">
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <span class="text-2xl font-bold text-gray-800">CSS Variables Hamburgers</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="#features" class="text-gray-600 hover:text-gray-800">Features</a>
+          <a href="#installation" class="text-gray-600 hover:text-gray-800">Installation</a>
+          <a href="#usage" class="text-gray-600 hover:text-gray-800">Usage</a>
+          <a href="https://github.com/TomoyaKuroda/CSS-Variables-Hamburgers" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-800">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="menu-toggle" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#features" class="block text-gray-600 hover:text-gray-800 py-2">Features</a>
+        <a href="#installation" class="block text-gray-600 hover:text-gray-800 py-2">Installation</a>
+        <a href="#usage" class="block text-gray-600 hover:text-gray-800 py-2">Usage</a>
+        <a href="https://github.com/your-repo-link" target="_blank" rel="noopener noreferrer" class="block text-gray-600 hover:text-gray-800 py-2">GitHub</a>
+      </div>
+    </div>
+  </nav>
 
-<body>
-	<div class="container">
-		<img src="assets/images/favicon.svg" alt="" class="logo">
-		<h1>CSS Variables Hamburgers</h1>
-		<div class="copy">
-					 <a href="css-variables-hamburgers.min.css" download="css-variables-hamburgers.min.css" target="_blank" class="button-64"><span class="text">Download Hamburgers</span></a>
-					 <p><a href="https://github.com/TomoyaKuroda/CSS-Variables-Hamburgers"
-					 target="_blank"
-					 rel="noopener noreferrer">CSS Variables Hamburgers</a> are Easy-to-use hamburger menu animations with CSS variables</p>
-			<p>Click the hamburger icons to toggle the animation.</p>
-		</div>
-	</div>
+  <header class="bg-gray-800 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">CSS Variables Hamburgers</h1>
+      <p class="text-xl md:text-2xl mb-8">Customizable, accessible hamburger menus using CSS variables</p>
+      <a href="#installation" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full text-lg transition duration-300">Get Started</a>
+    </div>
+  </header>
 
-	<h2>Demo</h2>
-	<p class="copy">Tweak the CSS variables to see the effect</p>
-	<div class="container demo-container">
-		<div class="demo-input">
-			<div>
-				<label for="hamburger-classes">hamburger class</label>
-				<select id="hamburger-classes" onChange="updateHamburgerClass()"></select>
-			</div>
-			<div>
-				<label for="hamburger-padding-x">--hamburger-padding-x</label>
-				<input type="number" id="hamburger-padding-x" onChange="updateCSSVariables()" value="15">
-			</div>
-			<div>
-				<label for="hamburger-padding-y">--hamburger-padding-y</label>
-				<input type="number" id="hamburger-padding-y" onChange="updateCSSVariables()" value="15">
-			</div>
-			<div>
-				<label for="hamburger-layer-width">--hamburger-layer-width</label>
-				<input type="number" id="hamburger-layer-width" onChange="updateCSSVariables()" value="40">
-			</div>
-			<div>
-				<label for="hamburger-layer-height">--hamburger-layer-height</label>
-				<input type="number" id="hamburger-layer-height" onChange="updateCSSVariables()" value="4">
-			</div>
-			<div>
-				<label for="hamburger-layer-spacing">--hamburger-layer-spacing</label>
-				<input type="number" id="hamburger-layer-spacing" onChange="updateCSSVariables()" value="6">
-			</div>
-			<div>
-				<label for="hamburger-layer-color">--hamburger-layer-color</label>
-				<input type="color" id="hamburger-layer-color" onChange="updateCSSVariables()" value="#000">
-			</div>
-			<div>
-				<label for="hamburger-layer-border-radius">--hamburger-layer-border-radius</label>
-				<input type="number" id="hamburger-layer-border-radius" onChange="updateCSSVariables()" value="4">
-			</div>
-			<div>
-				<label for="hamburger-hover-opacity">--hamburger-hover-opacity</label>
-				<input type="number" id="hamburger-hover-opacity" onChange="updateCSSVariables()" value="0.7" min="0" max="1" step="0.1">
-			</div>
-			<div>
-				<label for="hamburger-active-layer-color">--hamburger-active-layer-color</label>
-				<input type="color" id="hamburger-active-layer-color" onChange="updateCSSVariables()" value="#000">
-			</div>
-			<div>
-				<label for="hamburger-active-hover-opacity">--hamburger-active-hover-opacity</label>
-				<input type="number" id="hamburger-active-hover-opacity" onChange="updateCSSVariables()" value="0.7" min="0" max="1" step="0.1">
-			</div>
-			<div>
-				<label for="hamburger-checkbox">Active</label>
-				<input type="checkbox" id="hamburger-checkbox" onChange="updateCSSVariables()">
-			</div>
-		</div>
-			<button class="hamburger hamburger--3dx" id="demo"
-							type="button">
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>
-			</button>
-	</div>
-	<div class="hamburger-container">
-		<template id="hamburger-template">
-			<div>
-				<h2></h2>
-				<button class="hamburger"
-								type="button">
-					<span class="hamburger-box">
-						<span class="hamburger-inner"></span>
-					</span>
-				</button>
-			</div>
-		</template>
-	</div>
-	<div class="container">
-		<h3>CSS-Variables-Hamburgers</h3>
-		<p>This is an open-source project inspired by <a href="https://jonsuh.com/hamburgers/" target="_blank" rel="noopener noreferrer">Hamburgers by Jonathan Suh</a>, but with the customization feature of using CSS variables instead of Sass. With this project, you can easily create stylish hamburger menu animations for your web projects using pure CSS.</p>
-		<h3>Motivation</h3>
-		<p>The motivation behind this project is to provide a simpler and more flexible alternative to using Sass for customizing hamburger menu animations. By utilizing CSS variables, developers can easily tweak colors, sizes, and other properties directly in their CSS files without the need for Sass preprocessing.</p>
-		<h3>Features</h3>
-		<ul>
-			<li>Easy-to-use hamburger menu animations.</li>
-			<li>Customizable with CSS variables.</li>
-			<li>Lightweight and dependency-free.</li>
-			<li>Cross-browser compatible.</li>
-		</ul>
-		<h3>Usage</h3>
-		<ol>
-			<li>Download the CSS file <code>css-variables-hamburgers.min.css</code>.</li>
-			<li>Include the CSS file in your HTML document:</li>
-			<pre><code>&lt;link rel="stylesheet" href="css-variables-hamburgers.min.css"&gt;</code></pre>
-			<p>or</p>
-			<code>&lt;link href="https://cdn.jsdelivr.net/npm/@tomoyakuroda/css-variables-hamburgers@1/css-variables-hamburgers.min.css" rel="stylesheet"&gt;</code>
-			<p></p>
-			<li>Add the base hamburger markup:</li>
-			<pre><code>&lt;button class="hamburger" type="button"&gt;
-	&lt;span class="hamburger-box"&gt;
-		&lt;span class="hamburger-inner"&gt;&lt;/span&gt;
-	&lt;/span&gt;
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section id="features" class="mb-16">
+      <h2 class="text-3xl font-bold mb-6">Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <i class="fas fa-palette text-4xl text-blue-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Customizable</h3>
+          <p>Easily customize the appearance using CSS variables</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <i class="fas fa-universal-access text-4xl text-green-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Accessible</h3>
+          <p>Built with accessibility in mind for all users</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <i class="fas fa-mobile-alt text-4xl text-purple-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Responsive</h3>
+          <p>Works seamlessly across all device sizes</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="installation" class="mb-16">
+      <h2 class="text-3xl font-bold mb-6">Installation</h2>
+      <div class="bg-gray-800 text-white p-4 rounded-lg">
+        <pre class="whitespace-pre-wrap"><code>npm i @tomoyakuroda/css-variables-hamburgers</code></pre>
+      </div>
+    </section>
+
+    <section id="usage" class="mb-16">
+      <h2 class="text-3xl font-bold mb-6">Usage</h2>
+			<div class="bg-white p-6 rounded-lg shadow-md">
+          <ol class="list-decimal list-inside space-y-4">
+            <li>
+              Download the CSS file <a href="css-variables-hamburgers.min.css" download>css-variable-hamburgers.min.css</a></code>.
+            </li>
+            <li>
+              Include the CSS file in your HTML document:
+              <div class="bg-gray-100 p-4 rounded-lg">
+                <pre class="whitespace-pre-wrap"><code>import '@tomoyakuroda/css-variables-hamburgers/css-variables-hamburgers.min.css';
+or
+&lt;link rel="stylesheet" href="css-variable-hamburgers.min.css"&gt;
+or
+&lt;link href="https://cdn.jsdelivr.net/npm/@tomoyakuroda/css-variables-hamburgers@1/css-variables-hamburgers.min.css" rel="stylesheet"&gt;</code></pre>
+              </div>
+            </li>
+            <li>
+              Add the base hamburger markup:
+              <div class="bg-gray-100 p-4 rounded-lg">
+                <pre class="whitespace-pre-wrap"><code>&lt;button class="hamburger" type="button"&gt;
+  &lt;span class="hamburger-box"&gt;
+    &lt;span class="hamburger-inner"&gt;&lt;/span&gt;
+  &lt;/span&gt;
 &lt;/button&gt;</code></pre>
-			<li>Append the class name of the type of hamburger you’re craving (e.g. hamburger--collapse):</li>
-			<pre><code>&lt;button class="hamburger hamburger--collapse" type="button"&gt;
-	&lt;span class="hamburger-box"&gt;
-		&lt;span class="hamburger-inner"&gt;&lt;/span&gt;
-	&lt;/span&gt;
+              </div>
+            </li>
+            <li>
+              Append the class name of the type of hamburger you’re craving (e.g. "hamburger--collapse"):
+              <div class="bg-gray-100 p-4 rounded-lg">
+                <pre class="whitespace-pre-wrap"><code>&lt;button class="hamburger hamburger--collapse" type="button"&gt;
+  &lt;span class="hamburger-box"&gt;
+    &lt;span class="hamburger-inner"&gt;&lt;/span&gt;
+  &lt;/span&gt;
 &lt;/button&gt;</code></pre>
-			<li>Customize the hamburger menu using CSS variables:</li>
-			<pre><code>:root {
-	--hamburger-padding-x           : 15px;
-	--hamburger-padding-y           : 15px;
-	--hamburger-layer-width         : 40px;
-	--hamburger-layer-height        : 4px;
-	--hamburger-layer-spacing       : 6px;
-	--hamburger-layer-color         : #000;
-	--hamburger-layer-border-radius : 4px;
-	--hamburger-hover-opacity       : 0.7;
-	--hamburger-active-layer-color  : var(--hamburger-layer-color);
-	--hamburger-active-hover-opacity: var(--hamburger-hover-opacity);
+              </div>
+            </li>
+            <li>
+              Customize the hamburger menu using CSS variables:
+              <div class="bg-gray-100 p-4 rounded-lg">
+                <pre class="whitespace-pre-wrap"><code>:root {
+  --hamburger-padding-x           : 15px;
+  --hamburger-padding-y           : 15px;
+  --hamburger-layer-width         : 40px;
+  --hamburger-layer-height        : 4px;
+  --hamburger-layer-spacing       : 6px;
+  --hamburger-layer-color         : #000;
+  --hamburger-layer-border-radius : 4px;
+  --hamburger-hover-opacity       : 0.7;
+  --hamburger-active-layer-color  : var(--hamburger-layer-color);
+  --hamburger-active-hover-opacity: var(--hamburger-hover-opacity);
 }</code></pre>
-			<li>Toggle the hamburger menu animation with JavaScript:</li>
-			<pre><code>&lt;script&gt;
-	// Look for .hamburger
-	var hamburger = document.querySelector(".hamburger");
-	// On click
-	hamburger.addEventListener("click", function() {
-		// Toggle class "is-active"
-		hamburger.classList.toggle("is-active");
-		// Do something else, like open/close menu
-	});
+              </div>
+            </li>
+            <li>
+              Toggle the hamburger menu animation with JavaScript:
+              <div class="bg-gray-100 p-4 rounded-lg">
+                <pre class="whitespace-pre-wrap"><code>&lt;script&gt;
+// Look for .hamburger
+var hamburger = document.querySelector(".hamburger");
+// On click
+hamburger.addEventListener("click", function() {
+  // Toggle class "is-active"
+  hamburger.classList.toggle("is-active");
+  // Do something else, like open/close menu
+});
 &lt;/script&gt;</code></pre>
-		</ol>
-		<h3>Contributing</h3>
-		<p>Contributions are welcome! If you have any ideas for improvements or new features, feel free to open an issue or submit a pull request.</p>
-		<h3>License</h3>
-		<p>This project is licensed under the MIT License.</p>
-		<h3>Acknowledgments</h3>
-		<p>Many thanks to <a href="https://jonsuh.com/" target="_blank" rel="noopener noreferrer">Jonathan Suh</a> for providing the inspiration and the open-source project.</p>
-		</div>
-		<script>
-			const types = ["3dx", "3dx-r", "3dy", "3dy-r", "3dxy", "3dxy-r", "arrow", "arrow-r", "arrowalt", "arrowalt-r", "arrowturn", "arrowturn-r", "boring", "collapse", "collapse-r", "elastic", "elastic-r", "emphatic", "emphatic-r", "minus", "slider", "slider-r", "spring", "spring-r", "stand", "stand-r", "spin", "spin-r", "squeeze", "vortex", "vortex-r"];
-			const template = document.getElementById('hamburger-template');
-			const hamburgerClasses = document.getElementById('hamburger-classes');
-			types.forEach(type => {
-				const clone = document.importNode(template.content, true);
-				clone.querySelector('h2').textContent = type;
-				const hamburgerButton = clone.querySelector('.hamburger');
-				hamburgerButton.classList.add(`hamburger--${type}`);
-				hamburgerButton.addEventListener('click', function () {
-					this.classList.toggle('is-active');
-				});
-				document.querySelector('.hamburger-container').appendChild(clone);
+              </div>
+            </li>
+          </ol>
+        </div>
 
-				hamburgerClasses.innerHTML += `<option value="${type}">${type}</option>`
-			});
+    </section>
+  </main>
 
-			const demo = document.getElementById('demo');
-			function updateCSSVariables() {
-				const hamburgerPaddingX = document.getElementById('hamburger-padding-x').value;
-				const hamburgerPaddingY = document.getElementById('hamburger-padding-y').value;
-				const hamburgerLayerWidth = document.getElementById('hamburger-layer-width').value;
-				const hamburgerLayerHeight = document.getElementById('hamburger-layer-height').value;
-				const hamburgerLayerSpacing = document.getElementById('hamburger-layer-spacing').value;
-				const hamburgerLayerColor = document.getElementById('hamburger-layer-color').value;
-				const hamburgerLayerBorderRadius = document.getElementById('hamburger-layer-border-radius').value;
-				const hamburgerHoverOpacity = document.getElementById('hamburger-hover-opacity').value;
-				const hamburgerActiveLayerColor = document.getElementById('hamburger-active-layer-color').value;
-				const hamburgerActiveHoverOpacity = document.getElementById('hamburger-active-hover-opacity').value;
-				const hamburgerCheckbox = document.getElementById('hamburger-checkbox').checked;
-				demo.style.setProperty('--hamburger-padding-x', `${hamburgerPaddingX}px`);
-				demo.style.setProperty('--hamburger-padding-y', `${hamburgerPaddingY}px`);
-				demo.style.setProperty('--hamburger-layer-width', `${hamburgerLayerWidth}px`);
-				demo.style.setProperty('--hamburger-layer-height', `${hamburgerLayerHeight}px`);
-				demo.style.setProperty('--hamburger-layer-spacing', `${hamburgerLayerSpacing}px`);
-				demo.style.setProperty('--hamburger-layer-color', hamburgerLayerColor);
-				demo.style.setProperty('--hamburger-layer-border-radius', `${hamburgerLayerBorderRadius}px`);
-				demo.style.setProperty('--hamburger-hover-opacity', hamburgerHoverOpacity);
-				demo.style.setProperty('--hamburger-active-layer-color', hamburgerActiveLayerColor);
-				demo.style.setProperty('--hamburger-active-hover-opacity', hamburgerActiveHoverOpacity);
-				demo.classList.toggle('is-active', hamburgerCheckbox);
-			}
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>&copy; <span id="year"></span> CSS Variables Hamburgers. All rights reserved.</p>
+      <div class="mt-4">
+        <a href="https://github.com/TomoyaKuroda/CSS-Variables-Hamburgers" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white mx-2">
+          <i class="fab fa-github text-2xl"></i>
+        </a>
+        <a href="https://x.com/tomoyanime" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white mx-2">
+          <i class="fab fa-twitter text-2xl"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
 
-			function updateHamburgerClass() {
-				const hamburgerClasses = document.getElementById('hamburger-classes').value;
-				removeClassesWithPrefix(demo, 'hamburger--');
-				demo.classList.add(`hamburger--${hamburgerClasses}`);
-			}
+  <script>
+    const toggleMenu = () => {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("hidden");
+    };
 
-			function removeClassesWithPrefix(element, prefix) {
-					// Convert the element's class list to an array for easier manipulation
-					const classesToRemove = Array.from(element.classList).filter(className => className.startsWith(prefix));
-					
-					// Remove each class that starts with the specified prefix
-					classesToRemove.forEach(className => element.classList.remove(className));
-			}
+    document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
 
-			demo.addEventListener("click", function() {
-				demo.classList.toggle("is-active");
-				document.getElementById('hamburger-checkbox').checked = demo.classList.contains('is-active');
-			});
-
-
-		</script>
+		document.getElementById("year").innerHTML = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
